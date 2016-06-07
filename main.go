@@ -11,7 +11,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/go-yaml/yaml"
+	"github.com/wjm3219/yamlcheck/yaml"
 )
 
 func init() {
@@ -37,7 +37,7 @@ func main() {
 	}
 
 	var output interface{}
-	err = yaml.Unmarshal(bytes, &output)
+	err = yaml.Check(bytes, &output)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Yamlcheck err %v \n", err)
 		os.Exit(3)
